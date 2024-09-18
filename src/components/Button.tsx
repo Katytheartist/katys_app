@@ -34,14 +34,24 @@ const Button: React.FC<ButtonProps> = ({
     }
 
     switch (size) {
-        
+        case 'small':
+            sizeStyle = 'text-sm';
+            break;
+        case 'medium':
+            sizeStyle = 'text-base';
+            break;
+        case 'large':
+            sizeStyle = 'text-lg';
+            break;
     }
+
     return (
         <button
-        onClick={onClick}
-        style={style}
+        className={`${baseStyle} ${variantStyle} ${sizeStyle}`}
         >
+            {icon && iconPosition === 'left' && <span className="mr-2"> {icon} </span>}
             {label}
+            {icon && iconPosition === 'right' && <span className="ml-2"> {icon} </span>}
         </button>
     );
 };
