@@ -1,28 +1,24 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import Button from './Button';
 
 export default {
-  title: 'Components/Button', // This will create a "Button" section in Storybook
+  title: 'Components/Button', // creates "Button" section in Storybook
   component: Button,
 } as Meta;
 
-//template for the Button component stories
-const Template: Story = (args) => <Button {...args} />;
+const Template: StoryFn = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   label: 'Default Button',
 }
 
-// primary Button story
 export const Primary = Template.bind({});
 Primary.args = {
   label: 'Primary Button',
   variant: 'primary',
 };
 
-//secondary Button story
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Secondary Button',
@@ -56,13 +52,13 @@ Large.args = {
 export const IconLeft = Template.bind({});
 IconLeft.args = {
   label: 'Icon Left',
-  icon: <span>🌟</span>,
+  icon: <span>💻</span>,
   iconPosition: 'left',
 };
 
 export const IconRight = Template.bind({});
 IconRight.args = {
   label: 'Icon Right',
-  icon: <span>🌟</span>,
+  icon: <span>😸</span>,
   iconPosition: 'right',
 };

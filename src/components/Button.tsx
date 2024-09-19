@@ -1,7 +1,7 @@
 import React from "react";
 
 type ButtonProps = {
-    label: string;
+    label?: string;
     variant?: 'default' | 'primary' | 'secondary' | 'outlined';
     size?: 'small' | 'medium' | 'large';
     icon?: React.ReactNode;
@@ -9,13 +9,13 @@ type ButtonProps = {
 }
 
 const Button: React.FC<ButtonProps> = ({ 
-    label, 
+    label = 'string', 
     variant = 'default', 
     size= 'medium',
     icon,
     iconPosition = 'left',
 }) => {
-    let baseStyle = 'px-4 py-2 rounded focus:outline-none';
+    const baseStyle = 'px-4 py-2 rounded focus:outline-none';
     let variantStyle = '';
     let sizeStyle = '';
 
